@@ -1,0 +1,14 @@
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Business\bin\Debug\Fixer.Business.dll
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Business\bin\Debug\Fixer.Business.pdb
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Business\bin\Debug\Fixer.Data.dll
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Business\bin\Debug\Fixer.Shared.dll
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Business\bin\Debug\Newtonsoft.Json.dll
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Business\bin\Debug\Fixer.Data.pdb
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Business\bin\Debug\Fixer.Data.dll.config
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Business\bin\Debug\Fixer.Shared.pdb
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Business\bin\Debug\Newtonsoft.Json.xml
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Business\obj\Debug\Fixer.Business.csprojAssemblyReference.cache
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Business\obj\Debug\Fixer.Business.csproj.CoreCompileInputs.cache
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Business\obj\Debug\Fixer.Business.csproj.CopyComplete
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Business\obj\Debug\Fixer.Business.dll
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Business\obj\Debug\Fixer.Business.pdb

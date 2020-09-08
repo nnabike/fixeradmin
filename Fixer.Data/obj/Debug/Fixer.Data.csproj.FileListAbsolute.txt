@@ -1,0 +1,7 @@
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Data\bin\Debug\Fixer.Data.dll.config
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Data\bin\Debug\Fixer.Data.dll
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Data\bin\Debug\Fixer.Data.pdb
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Data\obj\Debug\Fixer.Data.csprojAssemblyReference.cache
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Data\obj\Debug\Fixer.Data.csproj.CoreCompileInputs.cache
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Data\obj\Debug\Fixer.Data.dll
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Data\obj\Debug\Fixer.Data.pdb

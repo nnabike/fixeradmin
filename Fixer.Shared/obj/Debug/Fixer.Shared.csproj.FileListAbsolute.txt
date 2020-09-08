@@ -1,0 +1,5 @@
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Shared\bin\Debug\Fixer.Shared.dll
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Shared\bin\Debug\Fixer.Shared.pdb
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Shared\obj\Debug\Fixer.Shared.csproj.CoreCompileInputs.cache
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Shared\obj\Debug\Fixer.Shared.dll
+C:\Users\bikey\Source\Repos\FixerMyAdmin\Fixer.Shared\obj\Debug\Fixer.Shared.pdb
