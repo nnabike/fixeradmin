@@ -1,0 +1,164 @@
+﻿<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+$(document).ready(
+    function () {
+
+        $('#btnNext').click(function () {
+            var hiddenTableName = $('#tableName').val();
+            var currentPage = $('#currentPage').val();
+            if (hiddenTableName === '') {
+                $('#error').html('Please pull up a table');
+                return;
+            }
+            var id = { TableName: hiddenTableName, PageNumber: parseInt(currentPage) + 1 };
+            var urlPath = "http://localhost:49787/api/data/GetPagedData/";
+
+            $.getJSON(urlPath, id).done(function (data) {
+                if ((JSON.parse(data)).length > 0) {
+                    displayTable(data); $('#currentPage').val(parseInt(currentPage) + 1);
+                }
+                
+            }).fail(function () { console.log('Fail') });
+           
+        });
+
+        $('#btnPrevious').click(function () {
+            var hiddenTableName = $('#tableName').val();
+            var currentPage = $('#currentPage').val();
+            if (hiddenTableName === '') {
+                $('#error').html('Please pull up a table');
+                return;
+            }
+            if (currentPage === "1") {
+                return;
+            }
+            var id = { TableName: hiddenTableName, PageNumber: parseInt(currentPage) - 1 };
+            var urlPath = "http://localhost:49787/api/data/GetPagedData/";
+
+            $.getJSON(urlPath, id).done(function (data) {
+                if ((JSON.parse(data)).length > 0) {
+                    console.log(data.length);
+                    displayTable(data); $('#currentPage').val(parseInt(currentPage) - 1);
+                }
+
+            }).fail(function () { console.log('Fail') });
+
+        });
+
+        
+
+$('#btnTableData').click(
+
+    function () {
+        var txtTable = $('#txtTable').val();
+        $('#tableName').val(txtTable);
+        if (txtTable.trim() === '') {
+            $('#error').html('Please specify a table name');
+            return;
+        }
+        var urlPath = "http://localhost:49787/api/data/" + txtTable;
+        $.getJSON(urlPath, function (data) {
+            if ((JSON.parse(data)).length > 0) {
+                displayTable(data);
+            }
+
+        }).fail(function () { $('#error').html('Table does not exist!'); console.log('Error')});
+
+    }
+
+  );
+
+
+});
+
+        function displayTable(data) {
+            var items = [];
+            var addHeader = true;
+            //console.log(data);
+            $.each(JSON.parse(data), function (key, val) {
+
+                var trHeader = "<tr id='header'>";
+                var trItems = ["<tr id='" + key + "'>"];
+
+                $.each(val, function (columnHeader, columnData) {
+                    trItems.push("<td id='" + columnHeader + "'>" + String(columnData) + "</td>");
+                    trHeader += "<th>" + columnHeader + "</th>";
+
+                });
+                trHeader += "</tr>";
+                trItems.push("</tr>");
+                if (addHeader) {
+                    items.push(trHeader);
+                    addHeader = false;
+                }
+                items.push(trItems);
+            });
+            $('#error').html('');
+            $('#dataTable').html('');
+            $("<table/>", {
+                "class": "my-table",
+                html: items.join("")
+            }).appendTo("#dataTable");
+            $('#error').html('');
+        }
+
+    </script>
+
+
+    <style>
+        th {
+            background-color: #337ab7;
+            color: wheat;
+            padding: 5px;
+            text-align: center;
+        }
+
+        td {
+            padding: 5px;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 90%;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>
+        <p align="center">   <br />Nnabike's Fixer Table Viewer           </p>
+    </h2>
+    <div id="inputData" style="margin:auto; border:1px solid #000000; width:450px; padding:20px">
+        <p>
+            Table Name : <input type="text" id="txtTable" />
+        </p>
+        <p>
+            <input type="button" id="btnTableData" value="Get data" class="btn btn-primary">
+        </p>
+        <div id="error"></div>
+
+    </div>
+    <div style="margin:auto; margin-top:10px; border:1px solid #000000; width: auto; padding:20px">
+        <div id="dataTable" style="margin-top:20px;"></div>
+        <div id="pagingBar">
+            <hr />
+            <input type="button" id="btnPrevious" value="<< Previous" class="btn btn-primary">
+            <input type="button" id="btnNext" value="Next >>" class="btn btn-primary">
+        </div>
+    </div>
+    <input type="hidden" id="tableName" value="" />
+    <input type="hidden" id="currentPage" value="1" />
+</body>
+</html>
