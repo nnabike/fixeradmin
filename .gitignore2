@@ -30,7 +30,11 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
+<<<<<<< HEAD
 packages/
+=======
+
+>>>>>>> 567caa5acc9a3af907d730069514bff3e23ff596
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
@@ -220,7 +224,10 @@ _pkginfo.txt
 !?*.[Cc]ache/
 
 # Others
+<<<<<<< HEAD
 packages/
+=======
+>>>>>>> 567caa5acc9a3af907d730069514bff3e23ff596
 ClientBin/
 ~$*
 *~
