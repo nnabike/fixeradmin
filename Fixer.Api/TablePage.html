@@ -51,29 +51,29 @@ $(document).ready(
 
         
 
-$('#btnTableData').click(
+        $('#btnTableData').click(
 
-    function () {
-        var txtTable = $('#txtTable').val();
-        $('#tableName').val(txtTable);
-        if (txtTable.trim() === '') {
-            $('#error').html('Please specify a table name');
-            return;
-        }
-        var urlPath = apiPath + "/api/data/" + txtTable;
-        $.getJSON(urlPath, function (data) {
-            if ((JSON.parse(data)).length > 0) {
-                displayTable(data);
+            function () {
+                var txtTable = $('#txtTable').val();
+                $('#tableName').val(txtTable);
+                if (txtTable.trim() === '') {
+                    $('#error').html('Please specify a table name');
+                    return;
+                }
+                var urlPath = apiPath + "/api/data/" + txtTable;
+                $.getJSON(urlPath, function (data) {
+                    if ((JSON.parse(data)).length > 0) {
+                        displayTable(data);
+                    }
+
+                }).fail(function () { $('#error').html('Table does not exist!'); console.log('Error')});
+
             }
 
-        }).fail(function () { $('#error').html('Table does not exist!'); console.log('Error')});
-
-    }
-
-  );
+          );
 
 
-});
+        });
 
         function displayTable(data) {
             var items = [];
